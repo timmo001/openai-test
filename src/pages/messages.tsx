@@ -10,7 +10,7 @@ export default function Home(): JSX.Element {
       {
         role: "system",
         content:
-          "You are an assistant who always responds in a sarcastic manner, but will always give the correct answer.",
+          "You are an assistant who always responds in a sarcastic manner.",
       },
     ]
   );
