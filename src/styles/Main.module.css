@@ -151,6 +151,114 @@
   background-clip: content-box;
 }
 
+/* Message bubbles */
+.messageSystem {
+  position: relative;
+  background-color: #191919;
+  border-radius: 0.4em;
+  padding: 10px;
+  margin: 10px 0;
+  max-width: 80%;
+}
+
+.messageFrom {
+  position: relative;
+  background-color: #191919;
+  border-radius: 0.4em;
+  padding: 10px;
+  margin: 10px 0;
+  max-width: 80%;
+}
+
+.messageFrom::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  margin-top: -10px;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-right: 10px solid #191919;
+  border-bottom: 10px solid transparent;
+}
+
+.messageFrom::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  margin-top: -8px;
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-right: 8px solid #191919;
+  border-bottom: 8px solid transparent;
+}
+
+.messageTo {
+  position: relative;
+  background-color: #191919;
+  border-radius: 0.4em;
+  padding: 10px;
+  margin: 10px 0;
+  max-width: 80%;
+}
+
+.messageTo::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  margin-top: -10px;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-left: 10px solid #191919;
+  border-bottom: 10px solid transparent;
+}
+
+.messageTo::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  margin-top: -8px;
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-left: 8px solid #191919;
+  border-bottom: 8px solid transparent;
+}
+
+/* Message input */
+.messageInputContainer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #191919;
+  padding: 10px;
+}
+
+.messageInputForm {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.messageInput {
+  flex-grow: 1;
+  min-width: max-content;
+  width: 100%;
+  max-width: -webkit-fill-available;
+  border: none;
+  border-radius: 0.4em;
+  background-color: #191919;
+  color: #fff;
+}
+
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
   .card:hover {
@@ -254,25 +362,5 @@
 @media (min-width: 701px) and (max-width: 1120px) {
   .grid {
     grid-template-columns: repeat(2, 50%);
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .vercelLogo {
-    filter: invert(1);
-  }
-
-  .logo,
-  .thirteen img {
-    filter: invert(1) drop-shadow(0 0 0.3rem #ffffff70);
-  }
-}
-
-@keyframes rotate {
-  from {
-    transform: rotate(360deg);
-  }
-  to {
-    transform: rotate(0deg);
   }
 }

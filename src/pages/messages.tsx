@@ -10,7 +10,7 @@ export default function Home(): JSX.Element {
       {
         role: "system",
         content:
-          "You are an AI assistant for a developer. You are helping them build a new app. They ask you to help them choose a name for their app. You can suggest names and they can accept or reject them. Let's get started!",
+          "You are an assistant who always responds in a sarcastic manner, but will always give the correct answer.",
       },
     ]
   );
@@ -38,12 +38,15 @@ export default function Home(): JSX.Element {
 
   function addMessageAndSend(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    // Send the message to the server
     const message: ChatCompletionRequestMessage = {
       role: "user",
       content: (event.target as HTMLFormElement).message.value,
     };
     setMessages([...messages, message]);
     sendMessages([...messages, message]);
+    // Clear the input
+    (event.target as HTMLFormElement).message.value = "";
   }
 
   return (
@@ -55,20 +58,37 @@ export default function Home(): JSX.Element {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <h1 className={styles.title}>Messages</h1>
         <section>
           {messages.map((message, index) => (
-            <div key={index}>
-              <p>{message.role}</p>
+            <div
+              key={index}
+              className={
+                message.role === "user"
+                  ? styles.messageTo
+                  : message.role === "assistant"
+                  ? styles.messageFrom
+                  : styles.messageSystem
+              }
+            >
               <p>{message.content}</p>
             </div>
           ))}
         </section>
-        <section>
-          <form onSubmit={addMessageAndSend}>
-            <label htmlFor="message">Message</label>
-            <input type="text" name="message" />
-            <button type="submit">Send</button>
+        <section className={styles.messageInputContainer}>
+          <form
+            className={styles.messageInputForm}
+            onSubmit={addMessageAndSend}
+          >
+            <input
+              className={styles.messageInput}
+              type="text"
+              id="message"
+              name="message"
+              placeholder="Type your message here..."
+            />
+            <button className={styles.messageInputSubmit} type="submit">
+              Send
+            </button>
           </form>
         </section>
       </main>
