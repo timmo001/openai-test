@@ -1,12 +1,14 @@
+import { useState } from "react";
 import Head from "next/head";
 import axios from "axios";
 
 import styles from "@/styles/Main.module.css";
 
 export default function Home({ apiKey }: { apiKey: string }): JSX.Element {
-  async function uploadFile(event) {
+  const [response, setResponse] = useState<{ text: string }>();
+
+  async function uploadFile(event: any) {
     const file = event.target.files[0];
-    console.log(file);
 
     var formData = new FormData();
     formData.append("file", file);
@@ -22,6 +24,9 @@ export default function Home({ apiKey }: { apiKey: string }): JSX.Element {
         },
       }
     );
+
+    console.log(response.data);
+    setResponse(response.data);
   }
 
   return (
@@ -41,6 +46,9 @@ export default function Home({ apiKey }: { apiKey: string }): JSX.Element {
           >
             <input type="file" id="file" name="file"></input>
           </form>
+        </section>
+        <section>
+          <p>{response?.text}</p>
         </section>
       </main>
     </>
