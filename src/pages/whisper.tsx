@@ -1,7 +1,7 @@
 import Head from "next/head";
 import axios from "axios";
 
-import styles from "@/styles/Home.module.css";
+import styles from "@/styles/Main.module.css";
 
 export default function Home({ apiKey }: { apiKey: string }): JSX.Element {
   async function uploadFile(event) {
@@ -27,7 +27,7 @@ export default function Home({ apiKey }: { apiKey: string }): JSX.Element {
   return (
     <>
       <Head>
-        <title>OpenAI Test</title>
+        <title>Whisper | OpenAI Test</title>
         <meta name="description" content="OpenAI Test" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
