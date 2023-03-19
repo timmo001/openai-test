@@ -68,8 +68,7 @@ export default function Home(): JSX.Element {
                   : message.role === "assistant"
                   ? styles.messageFrom
                   : styles.messageSystem
-              }
-            >
+              }>
               <p>{message.content}</p>
             </div>
           ))}
@@ -77,8 +76,7 @@ export default function Home(): JSX.Element {
         <section className={styles.messageInputContainer}>
           <form
             className={styles.messageInputForm}
-            onSubmit={addMessageAndSend}
-          >
+            onSubmit={addMessageAndSend}>
             <input
               className={styles.messageInput}
               type="text"

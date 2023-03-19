@@ -42,8 +42,7 @@ export default function Home({ apiKey }: { apiKey: string }): JSX.Element {
           <form
             id="uploadForm"
             encType="multipart/form-data"
-            onChange={uploadFile}
-          >
+            onChange={uploadFile}>
             <input type="file" id="file" name="file"></input>
           </form>
         </section>
