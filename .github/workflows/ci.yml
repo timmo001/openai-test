@@ -12,6 +12,10 @@ on:
       - synchronize
   workflow_dispatch:
 
+concurrency:
+  group: ci-${{ github.head_ref || github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build-node-linux:
     uses: timmo001/workflows/.github/workflows/build-node-linux.yml@master
