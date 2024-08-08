@@ -1965,10 +1965,10 @@ open@^8.4.0:
     is-docker "^2.1.1"
     is-wsl "^2.2.0"
 
-openai@4.55.1:
-  version "4.55.1"
-  resolved "https://registry.yarnpkg.com/openai/-/openai-4.55.1.tgz#59fe4565ab117cf869137588f6da15ef330e405f"
-  integrity sha512-FziYJcWl+SAGbt5AcRIzVzNcnKohpEMQdtzVOmHFbBp/if7x2+ACqgxF2XUbyi2PcKONPcVpmtG5h9qoDAEXwQ==
+openai@4.55.2:
+  version "4.55.2"
+  resolved "https://registry.yarnpkg.com/openai/-/openai-4.55.2.tgz#5dae9ff3416e338303391cec665ac338fb30c0a2"
+  integrity sha512-Z81nbAPvlLl5eDLNldkixAayhUzbbCbOef/dqqW3uuN0Fkgj5GZn2kgUDTqGPOp2RHtcOYMfZltXNPoC6kEkTQ==
   dependencies:
     "@types/node" "^18.11.18"
     "@types/node-fetch" "^2.6.4"
