@@ -15,7 +15,7 @@
     "axios": "1.8.1",
     "eslint": "9.21.0",
     "eslint-config-next": "15.1.7",
-    "next": "15.1.7",
+    "next": "15.2.0",
     "openai": "4.85.4",
     "react": "19.0.0",
     "react-dom": "19.0.0",
