@@ -16,7 +16,7 @@
     "eslint": "9.39.1",
     "eslint-config-next": "16.0.7",
     "next": "16.0.7",
-    "openai": "6.9.1",
+    "openai": "6.10.0",
     "react": "19.2.1",
     "react-dom": "19.2.0",
     "typescript": "5.9.3"
