@@ -13,7 +13,7 @@
     "@types/react": "19.2.7",
     "@types/react-dom": "19.2.3",
     "axios": "1.13.2",
-    "eslint": "9.39.1",
+    "eslint": "9.39.2",
     "eslint-config-next": "16.0.10",
     "next": "16.0.10",
     "openai": "6.10.0",
